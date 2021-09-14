@@ -3,6 +3,8 @@
 mkdir build
 cd build
 
+mv "%RECIPE_DIR%\CMakeLists.txt" ./
+
 cmake \
   -DCMAKE_CXX_STANDARD=17 \
   -DCMAKE_BUILD_TYPE=Release \
