@@ -1,8 +1,7 @@
 
 {% set name = "NRLMSISE-00" %}
 {% set version = "0.1" %}
-{% set commit = "bc9a2feba4344e74201281e563332688a4d09cc3" %}
-{% set url = "https://git.linta.de/?p=~brodo/{{ name|lower }}.git;a=snapshot;h={{ commit }};sf=tgz" %}
+{% set url = "https://git.linta.de/?p=~brodo/nrlmsise-00.git;a=snapshot;h=bc9a2feba4344e74201281e563332688a4d09cc3;sf=tgz" %}
 
 package:
   name: {{ name|lower }}
