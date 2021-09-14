@@ -1,6 +1,8 @@
 mkdir build
 cd build
 
+move "%RECIPE_DIR%\CMakeLists.txt" .
+
 :: generator could be "%CMAKE_GEN%" for vs2017 or "NMake Makefiles" for clang
 
 cmake ^
