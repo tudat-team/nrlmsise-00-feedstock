@@ -1,9 +1,9 @@
 c_compiler:
 - vs2017
 channel_sources:
-- conda-forge,defaults
+- tudat-team, conda-forge, defaults
 channel_targets:
-- conda-forge main
+- tudat-team main
 target_platform:
 - win-64
 vc:
