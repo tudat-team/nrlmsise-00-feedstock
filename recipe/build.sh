@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-mv $RECIPE_DIR/CMakeLists.txt ./
+cp $RECIPE_DIR/CMakeLists.txt ./
+cp $RECIPE_DIR/nrlmsise00-config.cmake.in ./
+
+mkdir include
+mkdir include/nrlmsise00
+cp nrlmsise-00.h include/nrlmsise00/
 
 mkdir build
 cd build

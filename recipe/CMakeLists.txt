@@ -107,30 +107,30 @@ file(GLOB_RECURSE NRLMSISE00_HEADER_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/nrlmsise-00.h
         )
 
-message(STATUS NRLMSISE00_SOURCE_FILES
+file(GLOB_RECURSE NRLMSISE00_SOURCE_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/nrlmsise-00.c
         ${CMAKE_CURRENT_SOURCE_DIR}/nrlmsise-00_data.c
         )
 
 # Setup of library.
 if (NRLMSISE00_BUILD_STATIC_LIBRARY)
-    add_library(nrmsise00 STATIC "${NRLMSISE00_SOURCE_FILES}")
+    add_library(nrlmsise00 STATIC "${NRLMSISE00_SOURCE_FILES}")
 else ()
-    add_library(nrmsise00 SHARED "${NRLMSISE00_SOURCE_FILES}")
+    add_library(nrlmsise00 SHARED "${NRLMSISE00_SOURCE_FILES}")
 endif ()
 
 # Add headers to library target.
-target_include_directories(nrmsise00 PUBLIC
+target_include_directories(nrlmsise00 PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-        $<INSTALL_INTERFACE:include/nrmsise00>
+        $<INSTALL_INTERFACE:include/nrlmsise00>
         )
 
 # Setup of namespaced library.
-add_library(NRLMSISE00::nrmsise00 ALIAS nrmsise00)
+add_library(NRLMSISE00::nrlmsise00 ALIAS nrlmsise00)
 
 # Silence warnings.'
 if (NOT MSVC)
-#    set_property(TARGET nrmsise00 APPEND PROPERTY COMPILE_OPTIONS
+#    set_property(TARGET nrlmsise00 APPEND PROPERTY COMPILE_OPTIONS
 #            "-Wno-implicit-int"
 #            "-Wunused-result"
 #            "-Wno-incompatible-pointer-types"
@@ -142,7 +142,7 @@ if (NOT MSVC)
 #            "-Wno-format"
 #            "-Wno-unsequenced")
 elseif (MSVC)
-#    set_property(TARGET cspice APPEND PROPERTY COMPILE_OPTIONS
+#    set_property(TARGET nrlmsise00 APPEND PROPERTY COMPILE_OPTIONS
 #            "-wd4267"
 #            "-wd4554"
 #            "-wd4723"
@@ -157,7 +157,7 @@ elseif (MSVC)
 #            )
 endif (NOT MSVC)
 
-set_target_properties(cspice
+set_target_properties(nrlmsise00
         PROPERTIES
         LINKER_LANGUAGE C
         ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
@@ -199,10 +199,10 @@ endif ()
 # Installation of the header files.
 install(DIRECTORY include/ DESTINATION "${INSTALL_INCLUDE_DIR}")
 
-install(DIRECTORY test/ DESTINATION "${INSTALL_INCLUDE_DIR}")
+#install(DIRECTORY test/ DESTINATION "${INSTALL_INCLUDE_DIR}")
 
 # Installation of the data files.
-install(DIRECTORY data/ DESTINATION "${INSTALL_DATA_DIR}/${PROJECT_NAME_LOWER}")
+#install(DIRECTORY data/ DESTINATION "${INSTALL_DATA_DIR}/${PROJECT_NAME_LOWER}")
 
 # Add all targets to the build-tree export set
 export(TARGETS nrlmsise00 NAMESPACE ${PROJECT_NAME}:: FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME_LOWER}_export.cmake")
