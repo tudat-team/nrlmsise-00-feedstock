@@ -17,10 +17,12 @@ build:
 
 requirements:
   build:
+    - cmake
     - {{ compiler('c') }}
 
 test:
   requires:
+    - cmake
     - {{ compiler('c') }}
 
   files:
