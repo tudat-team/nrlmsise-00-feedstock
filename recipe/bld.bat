@@ -5,6 +5,10 @@ mkdir include
 mkdir include/nrlmsise00
 copy nrlmsise-00.h include/nrlmsise00/
 
+mkdir %LIBRARY_PREFIX%/include
+mkdir %LIBRARY_PREFIX%/include/nrlmsise00
+copy nrlmsise-00.h %LIBRARY_PREFIX%/include/nrlmsise00
+
 mkdir build
 cd build
 
