@@ -2,12 +2,12 @@ copy "%RECIPE_DIR%\CMakeLists.txt" .
 copy "%RECIPE_DIR%\nrlmsise00-config.cmake.in" .
 
 mkdir include
-mkdir include/nrlmsise00
-copy nrlmsise-00.h include/nrlmsise00/
+mkdir include\nrlmsise00
+copy nrlmsise-00.h include\nrlmsise00\nrlmsise-00.h
 
-mkdir %LIBRARY_PREFIX%/include
-mkdir %LIBRARY_PREFIX%/include/nrlmsise00
-copy nrlmsise-00.h %LIBRARY_PREFIX%/include/nrlmsise00
+@REM mkdir %LIBRARY_PREFIX%/include
+@REM mkdir %LIBRARY_PREFIX%/include/nrlmsise00
+@REM copy nrlmsise-00.h %LIBRARY_PREFIX%/include/nrlmsise00
 
 mkdir build
 cd build
