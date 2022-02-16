@@ -17,10 +17,12 @@ build:
 requirements:
   build:
     - cmake
+    - make  # [unix]
     - {{ compiler('c') }}
 
 test:
   requires:
+    - make  # [unix]
     - cmake
     - {{ compiler('c') }}
 
