@@ -1,11 +1,11 @@
-About nrlmsise-00
-=================
+About nrlmsise-00-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/tudat-team/nrlmsise-00-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.brodo.de/space/nrlmsise/
 
 Package license: 
-
-Feedstock license: [BSD-3-Clause](https://github.com/tudat-team/feedstock-feedstock/blob/master/LICENSE.txt)
 
 Summary: The NRLMSIS-00 empirical atmosphere model
 
@@ -41,8 +41,8 @@ Current build status
     <td>
       <details>
         <summary>
-          <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=&branchName=master">
-            <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/feedstock-feedstock?branchName=master">
+          <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
+            <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main">
           </a>
         </summary>
         <table>
@@ -50,29 +50,29 @@ Current build status
           <tbody><tr>
               <td>linux_64</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/feedstock-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/feedstock-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_arm64</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/feedstock-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_" alt="variant">
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>win_64</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=&branchName=master">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/feedstock-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -100,16 +100,41 @@ conda config --add channels tudat-team
 conda config --set channel_priority strict
 ```
 
-Once the `tudat-team` channel has been enabled, `nrlmsise-00` can be installed with:
+Once the `tudat-team` channel has been enabled, `nrlmsise-00` can be installed with `conda`:
 
 ```
 conda install nrlmsise-00
 ```
 
-It is possible to list all of the versions of `nrlmsise-00` available on your platform with:
+or with `mamba`:
+
+```
+mamba install nrlmsise-00
+```
+
+It is possible to list all of the versions of `nrlmsise-00` available on your platform with `conda`:
 
 ```
 conda search nrlmsise-00 --channel tudat-team
+```
+
+or with `mamba`:
+
+```
+mamba search nrlmsise-00 --channel tudat-team
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search nrlmsise-00 --channel tudat-team
+
+# List packages depending on `nrlmsise-00`:
+mamba repoquery whoneeds nrlmsise-00 --channel tudat-team
+
+# List dependencies of `nrlmsise-00`:
+mamba repoquery depends nrlmsise-00 --channel tudat-team
 ```
 
 

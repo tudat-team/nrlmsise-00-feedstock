@@ -1,5 +1,5 @@
 c_compiler:
-- vs2017
+- vs2019
 channel_sources:
 - tudat-team, conda-forge, defaults
 channel_targets:
