@@ -1,7 +1,7 @@
 
 {% set name = "NRLMSISE-00" %}
 {% set version = "0.1" %}
-{% set url = "https://git.linta.de/?p=~brodo/nrlmsise-00.git;a=snapshot;h=bc9a2feba4344e74201281e563332688a4d09cc3;sf=tgz" %}
+{% set url = "https://git.linta.de/~brodo/nrlmsise-00.git/snapshot/nrlmsise-00-master.tar.gz" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   url: {{ url }}
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
