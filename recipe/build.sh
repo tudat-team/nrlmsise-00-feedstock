@@ -9,14 +9,6 @@ else
     EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
 fi
 
-# Ensure CFLAGS does not inadvertently contain problematic flags
-CFLAGS="${CFLAGS/-march=nocona/}"
-CFLAGS="${CFLAGS/-march=haswell/}"
-CFLAGS="${CFLAGS/-mtune=generic/}"  # Adjust as necessary
-
-# Add specific architecture flag, if needed
-CFLAGS+=" -march=native"
-
 # Compile source code
 cd "${SRC_DIR}" || exit
 ${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -I. -fPIC -c nrlmsise-00.c nrlmsise-00_data.c
