@@ -1,32 +1,16 @@
-copy "%RECIPE_DIR%\CMakeLists.txt" .
-copy "%RECIPE_DIR%\nrlmsise00-config.cmake.in" .
+@echo on
 
-mkdir include
-mkdir include\nrlmsise00
-copy nrlmsise-00.h include\nrlmsise00\nrlmsise-00.h
+REM Setup
+set LIBNAME=nrlmsise-00.dll
+set EXTRA_FLAGS=-shared
 
-@REM mkdir %LIBRARY_PREFIX%/include
-@REM mkdir %LIBRARY_PREFIX%/include/nrlmsise00
-@REM copy nrlmsise-00.h %LIBRARY_PREFIX%/include/nrlmsise00
+REM Compile source code
+cd %SRC_DIR%
+%CC% %CFLAGS% %CPPFLAGS% %LDFLAGS% -I. -c nrlmsise-00.c nrlmsise-00_data.c
+%CC% %EXTRA_FLAGS% -o %LIBNAME% nrlmsise-00.obj nrlmsise-00_data.obj -lm
 
-mkdir build
-cd build
-
-
-:: generator could be "%CMAKE_GEN%" for vs2017 or "NMake Makefiles" for clang
-
-cmake ^
-    -G "%CMAKE_GEN%" ^
-    -DCMAKE_CXX_STANDARD=14 ^
-    -DCMAKE_BUILD_TYPE=Release ^
-    -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
-    -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
-    -DNRLMSISE00_BUILD_STATIC_LIBRARY=0 ^
-    ..
-if errorlevel 1 exit 1
-
-cmake --build . --config RelWithDebInfo --target install
-if errorlevel 1 exit 1
-
-ctest --verbose
-if errorlevel 1 exit 1
+REM Copy the library and header files to the Conda environment
+mkdir %PREFIX%\lib
+mkdir %PREFIX%\include\nrlmsise-00
+copy %LIBNAME% %PREFIX%\lib\
+copy *.h %PREFIX%\include\nrlmsise-00\

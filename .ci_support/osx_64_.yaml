@@ -7,9 +7,9 @@ c_compiler:
 c_compiler_version:
 - '16'
 channel_sources:
-- tudat-team, conda-forge, defaults
+- conda-forge
 channel_targets:
-- tudat-team main
+- conda-forge main
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:

@@ -1,48 +1,40 @@
-About nrlmsise-00-feedstock
-===========================
+About nrlmsise-feedstock
+========================
 
-Feedstock license: [BSD-3-Clause](https://github.com/tudat-team/nrlmsise-00-feedstock/blob/main/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nrlmsise-00-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.brodo.de/space/nrlmsise/
 
-Package license: 
+Package license: BSD-3-Clause
 
-Summary: The NRLMSIS-00 empirical atmosphere model
+Summary: NRLMSISE-00 is an empirical atmospheric model developed by the Naval Research Laboratory.
 
-The NRLMSIS-00 empirical atmosphere model was developed by Mike
-Picone, Alan Hedin, and Doug Drob based on the MSISE90 model.
+Documentation: https://www.brodo.de/space/nrlmsise/
 
-The MSISE90 model describes the neutral temperature and densities in
-Earth's atmosphere from ground to thermospheric heights. Below 72.5 km
-the model is primarily based on the MAP Handbook (Labitzke et al.,
-1985) tabulation of zonal average temperature and pressure by Barnett
-and Corney, which was also used for the CIRA-86. Below 20 km these
-data were supplemented with averages from the National Meteorological
-Center (NMC). In addition, pitot tube, falling sphere, and grenade
-sounder rocket measurements from 1947 to 1972 were taken into
-consideration. Above 72.5 km MSISE-90 is essentially a revised MSIS-86
-model taking into account data derived from space shuttle flights and
-newer incoherent scatter results. For someone interested only in the
-thermosphere (above 120 km), the author recommends the MSIS-86
-model. MSISE is also not the model of preference for specialized
-tropospheric work. It is rather for studies that reach across several
-atmospheric boundaries.
-(quoted from http://nssdc.gsfc.nasa.gov/space/model/atmos/nrlmsise00.html)
+The NRLMSIS-00 (sic!) empirical atmosphere model was developed by Mike Picone, Alan Hedin, and Doug Drob.
+It describes the neutral temperature and densities in Earth's atmosphere from ground to thermospheric heights.
 
 
 Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>Travis</td>
+    <td>
+      <a href="https://app.travis-ci.com/conda-forge/nrlmsise-00-feedstock">
+        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/nrlmsise-00-feedstock/main.svg?label=Linux">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
     <td>
       <details>
         <summary>
-          <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
-            <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main">
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main">
           </a>
         </summary>
         <table>
@@ -50,29 +42,36 @@ Current build status
           <tbody><tr>
               <td>linux_64</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_arm64</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>win_64</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=7&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nrlmsise-00-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -88,69 +87,108 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-nrlmsise--00-green.svg)](https://anaconda.org/tudat-team/nrlmsise-00) | [![Conda Downloads](https://img.shields.io/conda/dn/tudat-team/nrlmsise-00.svg)](https://anaconda.org/tudat-team/nrlmsise-00) | [![Conda Version](https://img.shields.io/conda/vn/tudat-team/nrlmsise-00.svg)](https://anaconda.org/tudat-team/nrlmsise-00) | [![Conda Platforms](https://img.shields.io/conda/pn/tudat-team/nrlmsise-00.svg)](https://anaconda.org/tudat-team/nrlmsise-00) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-nrlmsise-green.svg)](https://anaconda.org/conda-forge/nrlmsise) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/nrlmsise.svg)](https://anaconda.org/conda-forge/nrlmsise) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/nrlmsise.svg)](https://anaconda.org/conda-forge/nrlmsise) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/nrlmsise.svg)](https://anaconda.org/conda-forge/nrlmsise) |
 
-Installing nrlmsise-00
-======================
+Installing nrlmsise
+===================
 
-Installing `nrlmsise-00` from the `tudat-team` channel can be achieved by adding `tudat-team` to your channels with:
+Installing `nrlmsise` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
-conda config --add channels tudat-team
+conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `tudat-team` channel has been enabled, `nrlmsise-00` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `nrlmsise` can be installed with `conda`:
 
 ```
-conda install nrlmsise-00
-```
-
-or with `mamba`:
-
-```
-mamba install nrlmsise-00
-```
-
-It is possible to list all of the versions of `nrlmsise-00` available on your platform with `conda`:
-
-```
-conda search nrlmsise-00 --channel tudat-team
+conda install nrlmsise
 ```
 
 or with `mamba`:
 
 ```
-mamba search nrlmsise-00 --channel tudat-team
+mamba install nrlmsise
+```
+
+It is possible to list all of the versions of `nrlmsise` available on your platform with `conda`:
+
+```
+conda search nrlmsise --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search nrlmsise --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search nrlmsise-00 --channel tudat-team
+mamba repoquery search nrlmsise --channel conda-forge
 
-# List packages depending on `nrlmsise-00`:
-mamba repoquery whoneeds nrlmsise-00 --channel tudat-team
+# List packages depending on `nrlmsise`:
+mamba repoquery whoneeds nrlmsise --channel conda-forge
 
-# List dependencies of `nrlmsise-00`:
-mamba repoquery depends nrlmsise-00 --channel tudat-team
+# List dependencies of `nrlmsise`:
+mamba repoquery depends nrlmsise --channel conda-forge
 ```
 
 
+About conda-forge
+=================
+
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
+
+conda-forge is a community-led conda channel of installable packages.
+In order to provide high-quality builds, the process has been automated into the
+conda-forge GitHub organization. The conda-forge organization contains one repository
+for each of the installable packages. Such a repository is known as a *feedstock*.
+
+A feedstock is made up of a conda recipe (the instructions on what and how to build
+the package) and the necessary configurations for automatic building using freely
+available continuous integration services. Thanks to the awesome service provided by
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
+
+To manage the continuous integration and simplify feedstock maintenance
+[conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
+Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
+this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
+
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+
+Terminology
+===========
+
+**feedstock** - the conda recipe (raw material), supporting scripts and CI configuration.
+
+**conda-smithy** - the tool which helps orchestrate the feedstock.
+                   Its primary use is in the construction of the CI ``.yml`` files
+                   and simplify the management of *many* feedstocks.
+
+**conda-forge** - the place where the feedstock and smithy live and work to
+                  produce the finished article (built conda distributions)
 
 
-Updating nrlmsise-00-feedstock
-==============================
+Updating nrlmsise-feedstock
+===========================
 
-If you would like to improve the nrlmsise-00 recipe or build a new
+If you would like to improve the nrlmsise recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
-`tudat-team` channel, whereupon the built conda packages will be available for
-everybody to install and use from the `tudat-team` channel.
-Note that all branches in the tudat-team/nrlmsise-00-feedstock are
+`conda-forge` channel, whereupon the built conda packages will be available for
+everybody to install and use from the `conda-forge` channel.
+Note that all branches in the conda-forge/nrlmsise-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
@@ -165,4 +203,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@geoffreygarrett](https://github.com/geoffreygarrett/)
 

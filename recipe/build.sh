@@ -1,28 +1,29 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-cp $RECIPE_DIR/CMakeLists.txt ./
-cp $RECIPE_DIR/nrlmsise00-config.cmake.in ./
-
-mkdir include
-mkdir include/nrlmsise00
-cp nrlmsise-00.h include/nrlmsise00/
-
-mkdir build
-cd build
-
-cmake \
-  -DCMAKE_CXX_STANDARD=17 \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_PREFIX_PATH=$PREFIX \
-  -DCMAKE_INSTALL_PREFIX=$PREFIX \
-  -DNRLMSISE00_BUILD_STATIC_LIBRARY=0 \
-..
-
-make -j2
-
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
-  ctest --verbose
+# Setup
+LIBNAME=libnrlmsise-00.so
+if [ "$(uname)" == "Darwin" ]; then
+    LIBNAME=libnrlmsise-00.dylib
+    EXTRA_FLAGS="-dynamiclib -install_name @rpath/${LIBNAME}"
+else
+    EXTRA_FLAGS="-shared -Wl,-soname,${LIBNAME}"
 fi
 
+# Ensure CFLAGS does not inadvertently contain problematic flags
+CFLAGS="${CFLAGS/-march=nocona/}"
+CFLAGS="${CFLAGS/-march=haswell/}"
+CFLAGS="${CFLAGS/-mtune=generic/}"  # Adjust as necessary
 
-make install
+# Add specific architecture flag, if needed
+CFLAGS+=" -march=native"
+
+# Compile source code
+cd "${SRC_DIR}" || exit
+${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -I. -fPIC -c nrlmsise-00.c nrlmsise-00_data.c
+${CC} ${EXTRA_FLAGS} -o ${LIBNAME} nrlmsise-00.o nrlmsise-00_data.o -lm
+
+# Copy the library and header files to the Conda environment
+mkdir -p "${PREFIX}"/lib
+mkdir -p "${PREFIX}"/include/nrlmsise-00
+cp ${LIBNAME} "${PREFIX}"/lib/
+cp -- *.h "${PREFIX}/include/nrlmsise-00/"
