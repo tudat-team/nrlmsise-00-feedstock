@@ -31,7 +31,7 @@ test:
     - $CC nrlmsise-00_test.c -I$PREFIX/include/nrlmsise-00 -L$PREFIX/lib -lnrlmsise-00 -o nrlmsise-00_test  # [not win]
 
     # Compile the test executable for Windows systems
-    - $CC nrlmsise-00_test.c -I%PREFIX%/include/nrlmsise-00 -L%PREFIX%/lib -lnrlmsise-00 -o nrlmsise-00_test.exe  # [win]
+    - %CC% nrlmsise-00_test.c -I%PREFIX%/include/nrlmsise-00 -L%PREFIX%/lib -lnrlmsise-00 -o nrlmsise-00_test.exe  # [win]
 
     # Execute the compiled test executable for Unix-like systems
     - if [ ! -f nrlmsise-00_test ]; then exit 1; fi  # [not win]
