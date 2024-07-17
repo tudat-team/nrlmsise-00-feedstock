@@ -1,9 +1,9 @@
 c_compiler:
 - gcc
 c_compiler_version:
-- '11'
+- '12'
 cdt_name:
-- cos6
+- cos7
 channel_sources:
 - tudat-team, conda-forge, defaults
 channel_targets:
