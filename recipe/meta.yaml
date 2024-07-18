@@ -38,12 +38,37 @@ test:
     # Use DYLD_LIBRARY_PATH for macOS
     - "if [[ $(uname) == 'Darwin' ]]; then DYLD_LIBRARY_PATH=$PREFIX/lib ./nrlmsise-00_test; else LD_LIBRARY_PATH=$PREFIX/lib ./nrlmsise-00_test; fi"  # [not win]
 
-    # Compile the test executable for Windows systems
+    # Check directories for Windows systems
     - "dir %PREFIX% && dir %PREFIX%\\Library && dir %PREFIX%\\Library\\include && dir %PREFIX%\\Library\\lib"  # [win]
-    - "@echo off && cl /c /O2 /nologo /EHsc /I%PREFIX%/Library/include nrlmsise-00_test.c && link /OUT:nrlmsise-00_test.exe nrlmsise-00_test.obj && if not exist nrlmsise-00_test.exe (echo Compilation failed && exit /b 1) && echo Compilation succeeded"  # [win]
+
+    # Compile the test executable for Windows systems
+    - |                                                    #[win]
+      @echo off                                            #[win]
+      cl /c /O2 /nologo /EHsc /I%PREFIX%\\Library\\include nrlmsise-00_test.c  #[win]
+      if errorlevel 1 (                                    #[win]
+          echo Compilation failed                          #[win]
+          exit /b 1                                        #[win]
+      )                                                    #[win]
+      link /OUT:nrlmsise-00_test.exe nrlmsise-00_test.obj  #[win]
+      if errorlevel 1 (                                    #[win]
+          echo Linking failed                              #[win]
+          exit /b 1                                        #[win]
+      )                                                    #[win]
+      echo Compilation succeeded                           #[win]
 
     # Execute the compiled test executable for Windows systems
-    - "@echo off && if not exist nrlmsise-00_test.exe (exit 1) && nrlmsise-00_test.exe"  # [win]
+    - |                                                    #[win]
+      @echo off                                            #[win]
+      if not exist nrlmsise-00_test.exe (                  #[win]
+          echo Test executable not found                   #[win]
+          exit /b 1                                        #[win]
+      )                                                    #[win]
+      nrlmsise-00_test.exe                                 #[win]
+      if errorlevel 1 (                                    #[win]
+          echo Test execution failed                       #[win]
+          exit /b 1                                        #[win]
+      )                                                    #[win]
+      echo Test execution succeeded                        #[win]
 
 about:
   home: https://www.brodo.de/space/nrlmsise/
