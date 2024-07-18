@@ -39,7 +39,7 @@ test:
     - "if [[ $(uname) == 'Darwin' ]]; then DYLD_LIBRARY_PATH=$PREFIX/lib ./nrlmsise-00_test; else LD_LIBRARY_PATH=$PREFIX/lib ./nrlmsise-00_test; fi"  # [not win]
 
     # Compile the test executable for Windows systems
-    - "dir %PREFIX% && dir %PREFIX%\\Library"  # [win]
+    - "dir %PREFIX% && dir %PREFIX%\\Library && dir %PREFIX%\\Library\\include && dir %PREFIX%\\Library\\lib"  # [win]
     - "@echo off && cl /c /O2 /nologo /EHsc /I%PREFIX%/Library/include nrlmsise-00_test.c && link /OUT:nrlmsise-00_test.exe nrlmsise-00_test.obj && if not exist nrlmsise-00_test.exe (echo Compilation failed && exit /b 1) && echo Compilation succeeded"  # [win]
 
     # Execute the compiled test executable for Windows systems
