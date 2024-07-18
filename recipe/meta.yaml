@@ -37,11 +37,10 @@ test:
     - "if [[ $(uname) == 'Darwin' ]]; then DYLD_LIBRARY_PATH=$PREFIX/lib ./nrlmsise-00_test; else LD_LIBRARY_PATH=$PREFIX/lib ./nrlmsise-00_test; fi"  # [not win]
 
     # Compile the test executable for Windows systems
-    - "@echo off && cl /c /O2 /nologo /EHsc /I%PREFIX%/include/nrlmsise-00 nrlmsise-00_test.c && link /OUT:nrlmsise-00_test.exe nrlmsise-00_test.obj && if not exist nrlmsise-00_test.exe (echo Compilation failed && exit /b 1) && echo Compilation succeeded"  # [win]
+    - "@echo off && cl /c /O2 /nologo /EHsc /I%PREFIX%/Library/include/nrlmsise-00 nrlmsise-00_test.c && link /OUT:nrlmsise-00_test.exe nrlmsise-00_test.obj && if not exist nrlmsise-00_test.exe (echo Compilation failed && exit /b 1) && echo Compilation succeeded"  # [win]
 
     # Execute the compiled test executable for Windows systems
     - "@echo off && if not exist nrlmsise-00_test.exe (exit 1) && nrlmsise-00_test.exe"  # [win]
-
 
 about:
   home: https://www.brodo.de/space/nrlmsise/
