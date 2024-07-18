@@ -11,7 +11,7 @@ Summary: NRLMSISE-00 is an empirical atmospheric model developed by the Naval Re
 
 Documentation: https://www.brodo.de/space/nrlmsise/
 
-The NRLMSIS-00 (sic!) empirical atmosphere model was developed by Mike Picone, Alan Hedin, and Doug Drob.
+The NRLMSISE-00 empirical atmosphere model was developed by Mike Picone, Alan Hedin, and Doug Drob.
 It describes the neutral temperature and densities in Earth's atmosphere from ground to thermospheric heights.
 
 

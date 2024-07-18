@@ -28,18 +28,18 @@ test:
 
   commands:
     # Compile the test executable for Unix-like systems
-    - $CC nrlmsise-00_test.c -I$PREFIX/include/nrlmsise-00 -L$PREFIX/lib -lnrlmsise-00 -o nrlmsise-00_test  # [not win]
+    - "$CC nrlmsise-00_test.c -I$PREFIX/include/nrlmsise-00 -L$PREFIX/lib -lnrlmsise-00 -o nrlmsise-00_test"  # [not win]
 
     # Compile the test executable for Windows systems
-    - %CC% nrlmsise-00_test.c -I%PREFIX%/include/nrlmsise-00 -L%PREFIX%/lib -lnrlmsise-00 -o nrlmsise-00_test.exe  # [win]
+    - "%CC% nrlmsise-00_test.c -I%PREFIX%/include/nrlmsise-00 -L%PREFIX%/lib -lnrlmsise-00 -o nrlmsise-00_test.exe"  # [win]
 
     # Execute the compiled test executable for Unix-like systems
-    - if [ ! -f nrlmsise-00_test ]; then exit 1; fi  # [not win]
-    - LD_LIBRARY_PATH=$PREFIX/lib ./nrlmsise-00_test  # [not win]
+    - "if [ ! -f nrlmsise-00_test ]; then exit 1; fi"  # [not win]
+    - "LD_LIBRARY_PATH=$PREFIX/lib ./nrlmsise-00_test"  # [not win]
 
     # Execute the compiled test executable for Windows systems
-    - if not exist nrlmsise-00_test.exe (exit 1)  # [win]
-    - ./nrlmsise-00_test.exe  # [win]
+    - "if not exist nrlmsise-00_test.exe (exit 1)"  # [win]
+    - "./nrlmsise-00_test.exe"  # [win]
 
 about:
   home: https://www.brodo.de/space/nrlmsise/
