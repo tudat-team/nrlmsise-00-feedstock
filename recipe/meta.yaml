@@ -25,6 +25,10 @@ test:
   requires:
     - {{ compiler('c') }}
 
+  files:
+    - test_nrlmsise_unix.sh         # [not win]
+    - test_nrlmsise_windows.bat     # [win]
+
   source_files:
     - nrlmsise-00_test.c
 
