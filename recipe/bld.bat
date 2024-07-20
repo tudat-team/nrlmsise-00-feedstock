@@ -11,6 +11,9 @@ dir /b *.obj > temp.lst
 link /DLL /OUT:nrlmsise-00.dll /IMPLIB:nrlmsise-00.lib @temp.lst
 if errorlevel 1 exit 1
 
+copy "nrlmsise-00.lib" %LIBRARY_LIB%
+if errorlevel 1 exit 1
+
 copy "nrlmsise-00.dll" %LIBRARY_BIN%
 if errorlevel 1 exit 1
 
