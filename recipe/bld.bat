@@ -7,7 +7,14 @@ if errorlevel 1 exit 1
 
 REM Link the object files into a DLL
 echo Linking NRLMSISE-00...
-link /DLL /OUT:%LIBRARY_BIN%\nrlmsise-00.dll /IMPLIB:%LIBRARY_LIB%\nrlmsise-00.lib nrlmsise-00.obj nrlmsise-00_data.obj
+dir /b *.obj > temp.lst
+link /DLL /OUT:nrlmsise-00.dll /IMPLIB:nrlmsise-00.lib @temp.lst
+if errorlevel 1 exit 1
+
+copy "nrlmsise-00.dll" %LIBRARY_BIN%
+if errorlevel 1 exit 1
+
+copy "nrlmsise-00.dll" %LIBRARY_LIB%
 if errorlevel 1 exit 1
 
 REM Copy header files to the include directory
