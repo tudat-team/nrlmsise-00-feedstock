@@ -1,5 +1,8 @@
 @echo off
 
+REM Copy the definition file to the source directory
+copy "%RECIPE_DIR%\\nrlmsise-00.def" %SRC_DIR%\
+
 REM Compile the NRLMSISE-00 library
 echo Compiling NRLMSISE-00...
 cl /c /O2 /nologo /EHsc /I"%LIBRARY_INC%" nrlmsise-00.c nrlmsise-00_data.c
