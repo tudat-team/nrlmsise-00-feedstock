@@ -49,7 +49,7 @@ test:
           echo Compilation failed                          #[win]
           exit /b 1                                        #[win]
       )                                                    #[win]
-      link /OUT:nrlmsise-00_test.exe nrlmsise-00_test.obj  #[win]
+      link /OUT:nrlmsise-00_test.exe nrlmsise-00_test.obj /LIBPATH:%PREFIX%\\Library\\lib nrlmsise-00.lib #[win]
       if errorlevel 1 (                                    #[win]
           echo Linking failed                              #[win]
           exit /b 1                                        #[win]
