@@ -19,7 +19,8 @@ if errorlevel 1 exit 1
 
 REM Copy header files to the include directory
 echo Copying headers...
-copy *.h %LIBRARY_INC%\nrlmsise-00
+if not exist "%LIBRARY_INC%\nrlmsise-00\" mkdir "%LIBRARY_INC%\nrlmsise-00"
+copy *.h %LIBRARY_INC%\nrlmsise-00\
 if errorlevel 1 exit 1
 
 echo NRLMSISE-00 build completed successfully.
