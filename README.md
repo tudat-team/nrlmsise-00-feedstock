@@ -8,4 +8,4 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-nrlmsise-green.svg)](https://anaconda.org/conda-forge/nrlmsise) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/nrlmsise.svg)](https://anaconda.org/conda-forge/nrlmsise) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/nrlmsise.svg)](https://anaconda.org/conda-forge/nrlmsise) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/nrlmsise.svg)](https://anaconda.org/conda-forge/nrlmsise) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-nrlmsise-00-green.svg)](https://anaconda.org/conda-forge/nrlmsise-00) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/nrlmsise-00.svg)](https://anaconda.org/conda-forge/nrlmsise-00) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/nrlmsise-00.svg)](https://anaconda.org/conda-forge/nrlmsise-00) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/nrlmsise-00.svg)](https://anaconda.org/conda-forge/nrlmsise-00) |
